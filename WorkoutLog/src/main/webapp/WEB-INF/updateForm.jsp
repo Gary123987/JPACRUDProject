@@ -11,10 +11,10 @@
 <form action="/update.do">
 Date of the Workout:<input type="date" name="date" value="${workout.date }"/><br>
 Muscle Group: <select name="muscleGroup" autofocus="${workout.muscleGroup }">
-	<option value="legs">Legs</option>
-	<option value="chestAndArms">Chest and Arms</option>
-	<option value="backAndCore">Back and Core</option>
-	<option value="cardio">Cardio</option>
+	<option value="Legs">Legs</option>
+	<option value="Chest and Arms">Chest and Arms</option>
+	<option value="Back and Core">Back and Core</option>
+	<option value="Cardio">Cardio</option>
 </select>
 Intensity:<select name="intensity" autofocus="${workout.intensity }">
 	<option value="1">1</option>
