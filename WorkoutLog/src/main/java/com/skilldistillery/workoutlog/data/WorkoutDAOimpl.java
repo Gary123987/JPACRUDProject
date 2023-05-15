@@ -1,5 +1,6 @@
 package com.skilldistillery.workoutlog.data;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -26,25 +27,30 @@ public class WorkoutDAOimpl implements WorkoutDAO {
 	@Override
 	public List<Workout> findAll() {
 		String query = "select w from Workout w";
-		return em.createQuery(query).getResultList();
+		List<Workout> workouts =  em.createQuery(query).getResultList();
+		return workouts;
 	}
 
 	@Override
 	public Workout create(Workout workout) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(workout);
+		return workout;
 	}
 
 	@Override
-	public Workout update(int id, Workout workout) {
-		// TODO Auto-generated method stub
-		return null;
+	public Workout update(int id, Workout updatedWorkout) {
+		Workout workout = findById(id);
+		workout = updatedWorkout;
+		em.merge(workout);
+		return workout;
 	}
 
 	@Override
 	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
+		Workout workout = findById(id);
+		em.remove(workout);
 		return false;
 	}
+
 
 }

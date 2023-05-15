@@ -11,8 +11,8 @@ public interface WorkoutDAO {
 	Workout findById(int id);
 	List<Workout> findAll();
 	Workout create(Workout workout);
-	Workout update(int id, Workout workout);
 	boolean deleteById(int id);
+	Workout update(int id, Workout workout);
 	
 
 }
